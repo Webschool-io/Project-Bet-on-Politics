@@ -18,7 +18,7 @@ app.set('view engine', 'jade');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(helmet());
 app.disable('x-powered-by');
@@ -41,15 +41,16 @@ app.use(passport.session());
 
 // Facebook
 passport.use(new FacebookStrategy({
-    clientID: '1541293726180178',
-    clientSecret: '66d673188d9c3925347096b663046ebb',
-    callbackURL: "http://localhost/painel/facebook"
-  },
-  function(accessToken, refreshToken, profile, done) {
-     // User.findOrCreate({ facebookId: profile.id }, function (err, user) {
-      return done(null, profile);
-    // });
-  }
+  clientID: '1541293726180178',
+  clientSecret: '66d673188d9c3925347096b663046ebb',
+  callbackURL: "http://localhost/painel/facebook"
+},
+function(accessToken, refreshToken, profile, done) {
+  // var usuario = app.models.usuario;
+  // usuario.update({ facebookId: profile.id }, function (err, user) {
+    return done(null, profile);
+  // });
+}
 ));
 
 
@@ -57,14 +58,14 @@ passport.use(new FacebookStrategy({
 let GITHUB_CLIENT_ID = "a0ad37decfefe3d3e42f";
 let GITHUB_CLIENT_SECRET = "d4f25fbf612f78dbc538cf705a4ed5465664521f";
 passport.use(new GithubStrategy({
-    clientID: GITHUB_CLIENT_ID,
-    clientSecret: GITHUB_CLIENT_SECRET,
-    callbackURL: "http://localhost/painel/github"
-  },
-  function(accessToken, refreshToken, profile, done) {
-    
-    return done(null, profile);
-  }
+  clientID: GITHUB_CLIENT_ID,
+  clientSecret: GITHUB_CLIENT_SECRET,
+  callbackURL: "http://localhost/painel/github"
+},
+function(accessToken, refreshToken, profile, done) {
+
+  return done(null, profile);
+}
 ));
 
 
@@ -74,7 +75,7 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(user, done) {
- 
+
   done(null, user);
 });
 

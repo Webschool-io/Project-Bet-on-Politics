@@ -4,13 +4,5 @@ module.exports = {
 			return res.redirect('/');
 		}
 		return next();
-	},
-	loginApi: function(req, res, next) {
-		if(req.isAuthenticated()) {
-			return next();
-		} else {
-			console.log(req);
-			res.sendStatus(403);
-		}
 	}
 };

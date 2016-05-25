@@ -10,4 +10,6 @@ module.exports = (app)=>{
 	app.get('/facebook/login/', passport.authenticate('facebook'));
 	app.get('/painel/github',passport.authenticate('github', { failureRedirect: '/erro' }), painel.painel);
 	app.get('/painel/facebook',passport.authenticate('facebook', { failureRedirect: '/erro' }), painel.painel);
+	app.get('/painel/', painel.nav);
+	app.get('/logout', autenticar.loginSistema, painel.logout);
 }

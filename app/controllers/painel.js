@@ -7,7 +7,14 @@ module.exports = (app)=>{
 			res.json(req.profile);
 		},
 		painel: (req,res)=>{
-			res.json(req.user);
+			res.redirect('/painel')
+		},
+		nav: (req,res)=>{
+			res.render('painel/index');
+		},
+		logout: (req,res)=>{
+			req.logout();
+			res.redirect('/');
 		}
 	}
 	return painelController;
