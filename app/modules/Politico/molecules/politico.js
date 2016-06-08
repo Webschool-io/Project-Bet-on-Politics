@@ -6,5 +6,6 @@ const Molecule = {
 , dataNascimento: require('./../atoms/datebirth')
 , cidade: require('./../atoms/city')
 , estado: require('./../atoms/state-br')
+, createdAt: { type: Date, default: Date.now() }
 }
 module.exports = new Schema(Molecule);
