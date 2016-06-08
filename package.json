@@ -20,6 +20,7 @@
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-github2": "^0.1.10",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "socketio": "^1.0.0"
   }
 }
