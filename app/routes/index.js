@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = (app)=>{
 	let 	painel 		= app.controllers.painel
 	,   	autenticar 	= require('../middleware/autenticador')
