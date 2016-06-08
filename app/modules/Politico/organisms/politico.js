@@ -10,6 +10,7 @@ const find = require('./organelles/find')(Organism);
 const findOne = require('./organelles/findOne')(Organism);
 const update = require('./organelles/update')(Organism);
 const remove = require('./organelles/remove')(Organism);
+const populate = require('./organelles/populate')(Organism);
 
 const Cell = {
   create
@@ -17,6 +18,7 @@ const Cell = {
 , findOne
 , update
 , remove
+, populate
 };
 
 module.exports = Cell;
