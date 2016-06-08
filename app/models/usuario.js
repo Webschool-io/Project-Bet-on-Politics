@@ -1,4 +1,4 @@
-module.exports = function(app){
+module.exports = (app)=>{
 	var mongoose = require('mongoose')
 	,	Schema = mongoose.Schema;
 

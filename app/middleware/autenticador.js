@@ -1,5 +1,5 @@
 module.exports = {
-	loginSistema: function(req, res, next) {
+	loginSistema: (req, res, next)=> {
 		if(!req.isAuthenticated()) {
 			return res.redirect('/');
 		}

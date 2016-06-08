@@ -1,13 +1,19 @@
 doctype html
-html
+html(ng-app="app")
     head
-        title Cotação Selfhouse
+        title Bets Politica
         meta( charset='utf-8')
         link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.min.css')
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
         meta(name="viewport" content="width=device-width, initial-scale=1")
     body 
         block content
+        block javascript
         script(src="/jquery/dist/jquery.min.js")  
         script(src="/bootstrap/dist/js/bootstrap.min.js")
-        block javascript
+        script(src="/angular/angular.min.js")
+        script(type="text/javascript" src="/angular-socket-io/socket.min.js")
+        script(type="text/javascript" src="/socket.io/socket.io.js")
+        script(src="/app.js")
+        script(src="/javascripts/app.js")
+

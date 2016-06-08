@@ -1,4 +1,20 @@
 extends ../layout
 block content
 	include ../nav
-	
+	div(class="container-fluid", style="magin-top: 50px")
+		div(class="row")
+			div(class="col-md-12 col-xs-12 col-sm-12 col-lg-12")
+				div(class="col-md-2")
+					div(class="panel panel-default")
+						div( class="panel-body")
+							b(class="text-info") Renan Calheiros
+							p
+							div(class="form-group")
+								img(class="img-responsive centered", src='http://www.senado.gov.br/senadores/img/fotos-oficiais/senador70.jpg')
+							div(class="form-group")
+								a(target="_blank", href="https://www25.senado.leg.br/web/senadores/senador/-/perfil/70", class="btn btn-default glyphicon glyphicon-search")
+									b  Informações
+							div(class="form-group")
+								b Votar 
+								a(class="btn btn-default glyphicon glyphicon-thumbs-up") 
+									b 2
