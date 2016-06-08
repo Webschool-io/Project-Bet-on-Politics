@@ -1,17 +1,17 @@
-const express           = require('express')
-const path             = require('path')
-const favicon          = require('serve-favicon')
-const logger           = require('morgan')
-const cookieParser     = require('cookie-parser')
-const bodyParser       = require('body-parser')
-const load             = require('express-load')
-const compression      = require('compression')
-const expressSession   = require('express-session')
-const helmet           = require('helmet')
-const GithubStrategy   = require('passport-github2').Strategy
+const express = require('express')
+const path = require('path')
+const favicon = require('serve-favicon')
+const logger = require('morgan')
+const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser')
+const load = require('express-load')
+const compression = require('compression')
+const expressSession = require('express-session')
+const helmet = require('helmet')
+const GithubStrategy = require('passport-github2').Strategy
 const FacebookStrategy = require('passport-facebook').Strategy
-const passport         = require('passport')
-const app              = express();
+const passport = require('passport')
+const app = express();
 
 app.set('views', path.join(__dirname, 'app/views'));
 app.set('view engine', 'jade');
@@ -55,8 +55,8 @@ function(accessToken, refreshToken, profile, done) {
 
 
 // Github
-let GITHUB_CLIENT_ID = "a0ad37decfefe3d3e42f";
-let GITHUB_CLIENT_SECRET = "d4f25fbf612f78dbc538cf705a4ed5465664521f";
+const GITHUB_CLIENT_ID = "a0ad37decfefe3d3e42f";
+const GITHUB_CLIENT_SECRET = "d4f25fbf612f78dbc538cf705a4ed5465664521f";
 passport.use(new GithubStrategy({
   clientID: GITHUB_CLIENT_ID,
   clientSecret: GITHUB_CLIENT_SECRET,
