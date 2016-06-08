@@ -1,17 +1,17 @@
-let  express           = require('express')
-,    path             = require('path')
-,    favicon          = require('serve-favicon')
-,    logger           = require('morgan')
-,    cookieParser     = require('cookie-parser')
-,    bodyParser       = require('body-parser')
-,    load             = require('express-load')
-,    compression      = require('compression')
-,    expressSession   = require('express-session')
-,    helmet           = require('helmet')
-,    GithubStrategy   = require('passport-github2').Strategy
-,    FacebookStrategy = require('passport-facebook').Strategy
-,    passport         = require('passport')
-,    app              = express();
+const express           = require('express')
+const path             = require('path')
+const favicon          = require('serve-favicon')
+const logger           = require('morgan')
+const cookieParser     = require('cookie-parser')
+const bodyParser       = require('body-parser')
+const load             = require('express-load')
+const compression      = require('compression')
+const expressSession   = require('express-session')
+const helmet           = require('helmet')
+const GithubStrategy   = require('passport-github2').Strategy
+const FacebookStrategy = require('passport-facebook').Strategy
+const passport         = require('passport')
+const app              = express();
 
 app.set('views', path.join(__dirname, 'app/views'));
 app.set('view engine', 'jade');
