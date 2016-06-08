@@ -1,13 +1,11 @@
 module.exports = (app)=>{
 	let mongoose = require('mongoose')
 	,   db = mongoose.connection;
-	
-	// Abrir Conexão 
-	mongoose.connect('mongodb://localhost/politica', function(err){
-
+	// Abrir Conexão
+	mongoose.connect('mongodb://localhost/bet-on-politics', function(err){
 		if(err) {
 			console.log("Error conectar mongo db: " + err);
-		} 
+		}
 	});
 
 	// Evento que veriricar error

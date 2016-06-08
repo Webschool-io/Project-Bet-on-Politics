@@ -1,9 +1,9 @@
 'use strict';
 
-const AtomName = 'State-BR';
+const AtomName = 'TypePolitic';
 
 module.exports = {
   type: String
 , validate: require('./../hadrons/'+AtomName.toLowerCase()+'ValidateMongoose')
-// , required: true
+, required: true
 }

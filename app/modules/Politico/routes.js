@@ -14,7 +14,7 @@ router.get('/', Find);
 // router.get('/crawler', (req, res) => {
 //   require('./crawler')(req, res);
 // });
-router.get('/crawler', Populate);
+router.get('/crawler/senadores', Populate);
 router.get('/:id', FindOne);
 router.post('/', Create);
 router.put('/:id', Update);

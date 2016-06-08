@@ -1,0 +1,1 @@
+module.exports = 'O tipo do político {VALUE} precisa ter tamanho maior que 5 e menor que 40!';
