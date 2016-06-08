@@ -1,8 +1,9 @@
 'use strict';
 
 const mongoose = require('mongoose');
-// const Molecule = require('./../molecules/user');
-const Organism = mongoose.model('User');
+const Molecule = require('./../molecules/politico');
+const MoleculeName = 'Politic';
+const Organism = mongoose.model(MoleculeName, Molecule);
 
 const create = require('./organelles/create')(Organism);
 const find = require('./organelles/find')(Organism);

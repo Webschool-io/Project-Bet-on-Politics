@@ -86,6 +86,9 @@ load('models',{cwd: 'app'})
 .then('config')
 .into(app);
 
+const PoliticosAPI = require('./app/modules/Politico/routes');
+app.use('/api/politicos', PoliticosAPI);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

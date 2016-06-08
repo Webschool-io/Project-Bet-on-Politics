@@ -5,6 +5,6 @@ const Molecule = {
 , email: require('./../atoms/email')
 , dataNascimento: require('./../atoms/datebirth')
 , cidade: require('./../atoms/city')
-, estado: require('./../atoms/state')
+, estado: require('./../atoms/state-br')
 }
 module.exports = new Schema(Molecule);

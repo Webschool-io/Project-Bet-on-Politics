@@ -1,0 +1,1 @@
+module.exports = 'A cidade {VALUE} precisa ter tamanho maior que 2 e menor que 80!';
