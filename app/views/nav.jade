@@ -1,5 +1,5 @@
 block content
-	div(class="container-fluid")
+	div(class="container-fluid",ng-controller="VotacaoCtrl")
 		nav(role="navigation", class="navbar navbar-default")
 			div(class="navbar-header")
 				button(type="button",class="navbar-toggle", data-target="#navbarCollapse",data-toggle="collapse")
@@ -9,6 +9,25 @@ block content
 					span(class="icon-bar")
 				a(href="/painel" class="navbar-brand") Apostas Politico
 			div(id="navbarCollapse", class="collapse navbar-collapse")
+				ul(class="nav navbar-nav")
+					li(class="dropdown")
+						a(data-toggle="dropdown" class="dropdown-toggle" href="#") Políticos
+							b(class="caret")
+						ul(role="menu" class="dropdown-menu")
+							li
+								a(href="/politica/cadasatrar")  Cadastrar
+							li
+								a(href="/politica/alterar") Alterar
+				ul(class="nav navbar-nav")
+					li(class="dropdown")
+						a(data-toggle="dropdown" class="dropdown-toggle" href="#") Acertos
+							b(class="caret")
+						ul(role="menu" class="dropdown-menu")
+							li
+								a(href="/acertos/listar")  Listar
 				ul(class="nav navbar-nav navbar-right")
+					li
+						a(class="text-success btn") 
+							b Usuários Conectados: {{contador}}
 					li
 						a(href="/logout" , class="btn btn-lg glyphicon glyphicon-off")

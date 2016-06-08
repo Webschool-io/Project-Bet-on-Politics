@@ -13,21 +13,23 @@
  app.set('port', port);
 
 
- var server = http.createServer(app);
+ let server = http.createServer(app);
 
- var io = require('socket.io')(server);
+ let io = require('socket.io')(server);
 
- io.on("connection", function(socket){
-  console.log('Usuario conectado: ');
-    //console.log(socket);
+ var contador = 0;
 
-    socket.on('disconnect', function () {
-      //clearInterval(buscaBanco);
-      console.log("desconectado!")
-    });
-
-    
+ io.on("connection", (socket)=>{
+  contador++;
+  console.log('Usuario conectado: '+contador);  
+  socket.emit('contador', contador);
+  socket.on('disconnect',  ()=> {
+    contador--;
+    console.log("desconectado!")
   });
+  
+
+});
 
  server.listen(port);
  server.on('error', onError);
