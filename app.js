@@ -43,7 +43,7 @@ app.use(passport.session());
 passport.use(new FacebookStrategy({
   clientID: '1541293726180178',
   clientSecret: '66d673188d9c3925347096b663046ebb',
-  callbackURL: "http://localhost/painel/facebook"
+  callbackURL: "http://localhost:3000/painel/facebook"
 },
 function(accessToken, refreshToken, profile, done) {
   // var usuario = app.models.usuario;
@@ -60,7 +60,7 @@ const GITHUB_CLIENT_SECRET = "d4f25fbf612f78dbc538cf705a4ed5465664521f";
 passport.use(new GithubStrategy({
   clientID: GITHUB_CLIENT_ID,
   clientSecret: GITHUB_CLIENT_SECRET,
-  callbackURL: "http://localhost/painel/github"
+  callbackURL: "http://localhost:3000/painel/github"
 },
 function(accessToken, refreshToken, profile, done) {
 

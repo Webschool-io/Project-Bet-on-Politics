@@ -1,13 +1,33 @@
 var request = require('request')
-,	cheerio = require('cheerio');
+,	cheerio = require('cheerio')
+, 	Politico = require('../models/politico');
+var pegar = [];
 
-
-for(var i=0; i < 100; i++){
-	request('https://www25.senado.leg.br/web/senadores/senador/-/perfil/'+i, (err,res,body)=>{
-		if(err) console.log('error: '+ err);
-		var $ = cheerio.load(body);
-		var recebe = $('.dl-horizontal').text().trim();
-		console.log(recebe);
+request('https://www25.senado.leg.br/web/senadores/senador/-/perfil/70', (err,res,body)=>{
+	if(err) console.log('error: '+ err);
+	var $ = cheerio.load(body);
+	var politico = new Politico();
+	console.log(politico);
+	var recebe = $('.dl-horizontal dd').each(function(e,l){
+		pegar.push($(this).text().trim());
+		Politico.nome 			= pegar[0];
+		politico.nascimento 	= pegar[1];
+		politico.naturalidade 	= pegar[2];
+		politico.gabinete 		= pegar[3];
+		politico.telefones 		= pegar[4];
+		politico.fax 			= pegar[5];
+		politico.email 			= pegar[6];
+		politico.apoio 			= pegar[7];
+		politico.save((err,g)=>{
+			if(!err){
+				pegar = [];
+			}
+		});
 	});
-}
+});
+
+
+
+
+
 
