@@ -1,5 +1,8 @@
 # Project-Bet-on-Politics
+
 Aposte em qual político será cassado ou investigado
+
+**node > 6**
 
 Inicialmente instale `npm i -g nodemon` para depois rodar o `npm start`.
 
