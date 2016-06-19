@@ -1,21 +1,27 @@
-module.exports = (app)=>{
-	var mongoose = require('mongoose')
-	,	Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-	var politico = new Schema({
+const politico = new Schema({
+	nome: { type: String , required: true},
+	partido: { type: String , required: true},
+	type: { 
+		type: String , 
+		enum: [
+			'senador(a)', 
+			'deputado(a)-federal', 
+			'deputado(a)-estadual', 
+			'vereador(a)'
+		], 
+		required: true},
+	nascimento: { type: String },
+	naturalidade: { type: String },
+	gabinete: { type: String },
+	telefones:{ type: String },
+	fax: { type: String },
+	email: { type: String },
+	apoio: { type: String },
+	createdAt: { type: Date, default: Date.now },
+	updatedAt: { type: Date, default: Date.now }	
 
-		nome: 		  	{ type: String , required: true},
-		nascimento:   	{ type: String },
-		naturalidade: 	{ type: String },
-		gabinete: 		{ type: String },
-		telefones: 		{ type: String },
-		fax: 			{ type: String },
-		email: 			{ type: String },
-		apoio: 			{ type: String },
-		created_at: 	{ type: Date, default: Date.now },
-		updated_at: 	{ type: Date, default: Date.now }	
-
-	});
-	// Referência site https://www25.senado.leg.br/web/senadores/senador/-/perfil/70
-	return mongoose.model('Politico', politico);	
-}
+});
+module.exports = mongoose.model('Politico', politico);	

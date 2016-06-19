@@ -2,7 +2,7 @@ module.exports = (app)=>{
 	let mongoose = require('mongoose')
 	,   db = mongoose.connection;
 	// Abrir Conexão
-	mongoose.connect('mongodb://localhost/bet-on-politics', function(err){
+	mongoose.connect('mongodb://localhost/politicos-teste', function(err){
 		if(err) {
 			console.log("Error conectar mongo db: " + err);
 		}
